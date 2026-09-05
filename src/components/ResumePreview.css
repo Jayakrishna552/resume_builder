@@ -1,0 +1,83 @@
+.preview-wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.preview-toolbar {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  padding: 0.75rem 1.25rem;
+  background: var(--card);
+  border-bottom: 1px solid var(--card-border);
+  position: sticky;
+  top: 72px;
+  z-index: 50;
+  justify-content: center;
+}
+
+.preview-toolbar .btn {
+  flex: 1;
+  min-width: 120px;
+}
+
+.preview-scroll-area {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+  background: linear-gradient(135deg, rgba(99,102,241,0.05), rgba(236,72,153,0.05));
+}
+
+.resume-preview {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 10px 40px rgba(2, 6, 23, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+@media print {
+  .preview-toolbar,
+  .no-print {
+    display: none !important;
+  }
+  .preview-scroll-area {
+    padding: 0;
+    background: #fff;
+    overflow: visible;
+  }
+  .resume-preview {
+    box-shadow: none;
+    border-radius: 0;
+  }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.floating-preview-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.2rem;
+  background: linear-gradient(135deg, var(--bg-gradient-1), var(--bg-gradient-3));
+  color: #fff;
+  border: none;
+  border-radius: 40px;
+  font-weight: 600;
+  box-shadow: var(--shadow-lg);
+  animation: fadeInUp 0.4s ease;
+}
