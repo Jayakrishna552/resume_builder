@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { ResumeProvider, useResume } from './context/ResumeContext';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
@@ -34,9 +34,9 @@ function AppContent() {
 function App() {
   return (
     <ResumeProvider>
-      <BrowserRouter>
+      <HashRouter>
         <AppContent />
-      </BrowserRouter>
+      </HashRouter>
     </ResumeProvider>
   );
 }
